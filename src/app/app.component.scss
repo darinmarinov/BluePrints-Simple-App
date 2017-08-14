@@ -1,0 +1,129 @@
+
+$desktop-width:1200px;
+$center-element:0 auto;
+$break-small: 320px;
+$break-middle: 991px;
+$break-large: 1220px;
+
+
+$open-sans:Open Sans, Arial, Sans-serif;
+$white:#fff;
+
+.container{
+  margin: $center-element;
+  width: 100%;
+  max-width: 100%
+}
+
+.row{overflow:hidden;text-align: center}
+
+  @media screen and (min-width: $break-large) {
+   .container{overflow:hidden; width: $desktop-width; max-width: 1200px}
+   .col-md-3{
+    display: inline-block;
+    margin: 20px 14px; 
+    padding: 15px; 
+    width: 28%; 
+    text-align: left
+    }
+   .col-md-6{
+    position: relative;
+    float: left;
+    width: 48%; 
+    min-height: 1px;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: left
+    }
+  }
+
+  @media (min-width: $break-middle) and (max-width: $break-large) {
+
+   .col-sm-6{
+    float: none;
+    display: inline-block;
+    position: relative;
+    margin: 20px 14px; 
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 43%; 
+    min-height: 1px;
+    }
+    p img{margin: 10px auto 0}
+  }
+
+  @media (min-width: $break-small) and (max-width: $break-middle) {
+   .col-xs-12 {
+    display: inline-block;
+    position: relative;
+    margin: 20px 14px; 
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 65%; 
+    min-height: 1px;
+    }
+    p img{margin: 10px auto 0}
+  }
+
+
+  header{ background: #363636 }
+
+  .logo{
+    display: inline-block;
+    margin: 20px 0 0;
+    color: $white;
+    font:800 16px $open-sans;
+    text-decoration: none;
+     &:hover{opacity: 0.7}
+  }
+
+  .menu{
+    margin: 0;
+    a {
+     position: relative;
+     display: inline-block;
+     margin: 0 10px;
+     padding: 21px 0;
+     @extend .logo;
+     text-align: center;
+     &:hover{
+       text-decoration: none;
+     }
+     &:before{
+     position: absolute;
+     content: '';
+     top: 0;
+     left: 0;
+     height: 4px;
+     background: #fff;
+     width: 0;
+     -webkit-transition: width .7s;
+     transition: width .7s;
+     }
+     &:hover:before{
+      width: 100%;
+     }
+    }
+  }
+
+ @media (min-width: $break-small) and (max-width: $break-large){
+   .menu a:before{
+     top:auto;
+     bottom: 5px
+   }
+ }
+ 
+@keyframes FadeIn {  
+  0% { 
+    opacity: 0; 
+    transform: scale(.1); 
+  }  
+  85% { 
+    opacity: 1; 
+    transform: scale(1.05); 
+  } 
+  100% { 
+    transform: scale(1); 
+  } 
+} 
+ 
